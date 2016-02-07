@@ -38,7 +38,7 @@ OI::OI() {
     testforward->WhileHeld(new TestForwardCommand());
 
     // SmartDashboard Buttons
-    SmartDashboard::PutData("LauncherMotorTestCommand", new LauncherMotorTestCommand());
+    SmartDashboard::PutData("LauncherMotorTestCommand: default", new LauncherMotorTestCommand(true));
     SmartDashboard::PutData("LauncherDefaultCommand", new LauncherDefaultCommand());
     SmartDashboard::PutData("TestBackwardCommand", new TestBackwardCommand());
     SmartDashboard::PutData("TestForwardCommand", new TestForwardCommand());

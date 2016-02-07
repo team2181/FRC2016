@@ -45,4 +45,13 @@ void Launcher::InitDefaultCommand() {
 void Launcher::setLauncherMotor(double s)
 {
 	launcherMotor->Set(s);
+	SmartDashboard::PutNumber("Launcher motor in", s);
+	SmartDashboard::PutNumber("Launcher motor out", launcherMotor->Get());
+}
+
+void Launcher::setloadermotor(double s)
+{
+	loaderMotor->Set(s);
+	SmartDashboard::PutNumber("Loader motor in", s);
+	SmartDashboard::PutNumber("Loader motor out", loaderMotor->Get());
 }
