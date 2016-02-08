@@ -31,7 +31,6 @@ void DriveTrainCommand::Initialize() {
 // Called repeatedly when this Command is scheduled to run
 void DriveTrainCommand::Execute() {
 	Robot::driveTrain->drive(Robot::oi->getdriverjoystick().get());
-	Robot::driveTrain->settestmotor(0);
 }
 
 // Make this return true when this Command no longer needs to run execute()

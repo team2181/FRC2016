@@ -28,7 +28,7 @@ public:
 	static std::shared_ptr<CANTalon> driveTrainmotorLB;
 	static std::shared_ptr<CANTalon> driveTrainmotorLF;
 	static std::shared_ptr<RobotDrive> driveTrainrobotdrive;
-	static std::shared_ptr<CANTalon> driveTraintestmotor;
+	static std::shared_ptr<CANTalon> launchertestmotor;
 	static std::shared_ptr<SpeedController> launcherlauncherMotor;
 	static std::shared_ptr<SpeedController> launcherloaderMotor;
 	static std::shared_ptr<DigitalInput> launcherarmSensor;

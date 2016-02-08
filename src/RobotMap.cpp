@@ -19,7 +19,7 @@ std::shared_ptr<CANTalon> RobotMap::driveTrainmotorRF;
 std::shared_ptr<CANTalon> RobotMap::driveTrainmotorLB;
 std::shared_ptr<CANTalon> RobotMap::driveTrainmotorLF;
 std::shared_ptr<RobotDrive> RobotMap::driveTrainrobotdrive;
-std::shared_ptr<CANTalon> RobotMap::driveTraintestmotor;
+std::shared_ptr<CANTalon> RobotMap::launchertestmotor;
 std::shared_ptr<SpeedController> RobotMap::launcherlauncherMotor;
 std::shared_ptr<SpeedController> RobotMap::launcherloaderMotor;
 std::shared_ptr<DigitalInput> RobotMap::launcherarmSensor;
@@ -51,8 +51,8 @@ void RobotMap::init() {
         driveTrainrobotdrive->SetMaxOutput(1.0);
 
         driveTrainrobotdrive->SetInvertedMotor(RobotDrive::kRearRightMotor, true);
-    driveTraintestmotor.reset(new CANTalon(5));
-    lw->AddActuator("DriveTrain", "testmotor", driveTraintestmotor);
+    launchertestmotor.reset(new CANTalon(5));
+    lw->AddActuator("Launcher", "testmotor", launchertestmotor);
     
     launcherlauncherMotor.reset(new Talon(0));
     lw->AddActuator("Launcher", "launcherMotor", std::static_pointer_cast<Talon>(launcherlauncherMotor));
