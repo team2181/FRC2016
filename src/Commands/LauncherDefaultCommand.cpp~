@@ -31,6 +31,7 @@ void LauncherDefaultCommand::Initialize() {
 // Called repeatedly when this Command is scheduled to run
 void LauncherDefaultCommand::Execute() {
 	Robot::launcher->setLauncherMotor(0);
+	Robot::launcher->setloadermotor(0);
 }
 
 // Make this return true when this Command no longer needs to run execute()

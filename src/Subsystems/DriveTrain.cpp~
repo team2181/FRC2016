@@ -54,7 +54,6 @@ void DriveTrain::settestmotor(double n)
 	testmotor->Set(n);
 	SmartDashboard::PutNumber("Analog In", testmotor->GetAnalogInRaw());
 	SmartDashboard::PutNumber("settestmotor runs", i);
-	i++;
 }
 // Put methods for controlling this subsystem
 // here. Call these from Commands.

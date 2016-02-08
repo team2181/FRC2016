@@ -32,11 +32,11 @@ void LauncherMotorTestCommand::Initialize() {
 void LauncherMotorTestCommand::Execute() {
 	if ( m_direction )
 	{
-		Robot::launcher->setLauncherMotor(0.25);
+		Robot::launcher->setLauncherMotor(1);
 	}
 	else
 	{
-		Robot::launcher->setLauncherMotor(-0.25);
+		Robot::launcher->setLauncherMotor(-1);
 	}
 }
 
