@@ -31,7 +31,7 @@ OI::OI() {
     loaderForward.reset(new JoystickButton(driverjoystick.get(), 1));
     loaderForward->WhileHeld(new ActuateLoaderCommand(true));
     launcherWheelBackward.reset(new JoystickButton(driverjoystick.get(), 3));
-    launcherWheelBackward->WhileHeld(new ActuateLauncherWheelCommand(false));
+    launcherWheelBackward->WhileHeld(new ActuateLauncherWheelCommand(true));
     launcherWheelForward.reset(new JoystickButton(driverjoystick.get(), 4));
     launcherWheelForward->WhileHeld(new ActuateLauncherWheelCommand(false));
     dartBackward.reset(new JoystickButton(driverjoystick.get(), 6));

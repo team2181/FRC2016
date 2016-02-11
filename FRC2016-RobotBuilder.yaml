@@ -295,7 +295,7 @@ Children:
           validators: null
           value:
           - !!robotbuilder.data.properties.ValuedParameterDescriptor {name: moveForward,
-            type: boolean, value: 'false'}
+            type: boolean, value: 'true'}
         Button: !!robotbuilder.data.properties.ChoicesProperty
           choices: *id006
           default: '1'

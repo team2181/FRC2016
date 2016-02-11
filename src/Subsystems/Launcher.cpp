@@ -63,6 +63,7 @@ void Launcher::readArmSensor()
 
 void Launcher::setDart(double v)
 {
+	SmartDashboard::PutNumber("Dart Position", dart->GetAnalogIn());
 	int p = dart->GetAnalogIn();
 	if(v > 0 && p >= 316)
 	{
