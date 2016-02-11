@@ -34,6 +34,7 @@ void LauncherDefaultCommand::Execute() {
 	Robot::launcher->setLoaderMotor(0);
 	Robot::launcher->readArmSensor();
 	Robot::launcher->setDart(0);
+	Robot::launcher->printUltrasonic();
 }
 
 // Make this return true when this Command no longer needs to run execute()
