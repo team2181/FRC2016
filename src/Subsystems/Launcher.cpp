@@ -60,7 +60,22 @@ void Launcher::readArmSensor()
 }
 
 
-void Launcher::setDart(double n)
+void Launcher::setDart(double v)
 {
-	dart->Set(n);
+	int p = dart->GetAnalogIn();
+	if(v > 0 && p >= 316)
+	{
+		dart->Set(v);
+	}
+	else
+	{
+		if(v < 0 && p <= 966)
+		{
+			dart->Set(v);
+		}
+		else
+		{
+			dart->Set(0);
+		}
+	}
 }

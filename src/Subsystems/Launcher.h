@@ -39,7 +39,7 @@ public:
 	void setLauncherMotor(double s);
 	void setLoaderMotor(double s);
 	void readArmSensor();
-	void setDart(double n);
+	void setDart(double v);
 };
 
 #endif
