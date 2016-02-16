@@ -88,7 +88,7 @@ void Launcher::setDart(double v)
 void Launcher::printUltrasonic()
 {
 	double u = ultrasonic->GetVoltage();
-	double target = ((-0.0102 * pow((u * 42.0919), 2)) + (3.0804 * (u * 42.0919)) + 210.79);
+	double target = AutoAim::GetTargetValue;
 	double pos = dart->GetAnalogIn();
 	SmartDashboard::PutNumber("Ultrasonic Voltage", u);
 	SmartDashboard::PutNumber("Dart Position Target Value", target);
