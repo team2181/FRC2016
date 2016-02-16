@@ -26,15 +26,14 @@ AutoAim::AutoAim(): Command() {
 
 // Called just before this Command runs the first time
 void AutoAim::Initialize() {
-
-}
-
-// Called repeatedly when this Command is scheduled to run
-void AutoAim::Execute() {
 	//Refresh the variables
 	u = RobotMap::launcherUltrasonic->GetVoltage();
 	target = ((-0.0102 * pow((u * 42.0919), 2)) + (3.0804 * (u * 42.0919)) + 210.79);
 	pos = RobotMap::launcherdart->GetAnalogIn;
+}
+
+// Called repeatedly when this Command is scheduled to run
+void AutoAim::Execute() {
 	//Correct the Aim to be within acceptable standards.
 	if (pos < target - 15)
 	{
