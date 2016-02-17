@@ -32,10 +32,10 @@ void ActuateLoaderCommand::Initialize() {
 // Called repeatedly when this Command is scheduled to run
 void ActuateLoaderCommand::Execute() {
 	if(m_dirrection){
-		Robot::launcher->setLoaderMotor(0.5);
+		Robot::launcher->setLoaderMotor(-0.5);
 	}
 	else {
-		Robot::launcher->setLoaderMotor(-0.5);
+		Robot::launcher->setLoaderMotor(0.5);
 	}
 }
 
