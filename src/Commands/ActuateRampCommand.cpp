@@ -25,17 +25,17 @@ ActuateRampCommand::ActuateRampCommand(bool dirrection): Command() {
 
 // Called just before this Command runs the first time
 void ActuateRampCommand::Initialize() {
-
+	if(m_dirrection){Robot::ramp->setMotor(0.25);}
+	else {Robot::ramp->setMotor(-0.25);}
 }
 
 // Called repeatedly when this Command is scheduled to run
 void ActuateRampCommand::Execute() {
-
 }
 
 // Make this return true when this Command no longer needs to run execute()
 bool ActuateRampCommand::IsFinished() {
-    return false;
+    return true;
 }
 
 // Called once after isFinished returns true

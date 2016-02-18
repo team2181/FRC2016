@@ -29,7 +29,7 @@ void RampDefaultCommand::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void RampDefaultCommand::Execute() {
-
+	Robot::ramp->setMotor(0);
 }
 
 // Make this return true when this Command no longer needs to run execute()
