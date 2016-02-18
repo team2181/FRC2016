@@ -11,10 +11,10 @@ Electrical/Technology Mentor:
 Bozidar Zorich
 
 Lead Programmer:
-Stevan Zorich (3rd year)
+Stevan Zorich (3rd year programmer)
 
-Programming Team (all 1st year):
-Samuel,
+Programming Team (1st year programmers):
+Samuel Brekke/Brekmister,
 Alex,
 Anna,
 Lizzie,
