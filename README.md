@@ -14,7 +14,7 @@ Lead Programmer:
 Stevan Zorich (3rd year programmer)
 
 Programming Team (1st year programmers):
-Samuel Brekke/Brekmister,
+Samuel Brekke (Brekmister),
 Alex,
 Anna,
 Lizzie,
