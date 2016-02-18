@@ -25,8 +25,8 @@ LaunchCommand::LaunchCommand(): Command() {
 // Called just before this Command runs the first time
 void LaunchCommand::Initialize() {
 	SetInterruptible(false);
-	SetTimeout(1);
-	Robot::launcher->setLoaderMotor(-1);
+	SetTimeout(0.2);
+	Robot::launcher->setLoaderMotor(1);
 }
 
 // Called repeatedly when this Command is scheduled to run
