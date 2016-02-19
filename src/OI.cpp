@@ -15,7 +15,6 @@
 #include "SmartDashboard/SmartDashboard.h"
 #include "Commands/ActuateDartCommand.h"
 #include "Commands/ActuateLauncherWheelCommand.h"
-#include "Commands/ActuateLoaderCommand.h"
 #include "Commands/ActuateRampCommand.h"
 #include "Commands/AutoDriveCommand.h"
 #include "Commands/AutonomousPlaceholder.h"
@@ -58,7 +57,6 @@ OI::OI() {
     SmartDashboard::PutData("RampDefaultCommand", new RampDefaultCommand());
     SmartDashboard::PutData("LaunchCommand", new LaunchCommand());
     SmartDashboard::PutData("ActuateDartCommand: default", new ActuateDartCommand(false));
-    SmartDashboard::PutData("ActuateLoaderCommand: default", new ActuateLoaderCommand(false));
     SmartDashboard::PutData("ActuateLauncherWheelCommand: default", new ActuateLauncherWheelCommand(true));
     SmartDashboard::PutData("LauncherDefaultCommand", new LauncherDefaultCommand());
     SmartDashboard::PutData("DriveTrainCommand", new DriveTrainCommand());
