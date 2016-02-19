@@ -49,6 +49,8 @@ void Robot::RobotInit() {
 	chooserChooser->AddObject("Right", rightChooser);
 	chooserChooser->AddObject("Center", centerChooser);
 
+	SmartDashboard::PutData("Field Location", chooserChooser);
+
   }
 /**
  * This function is called when the disabled button is hit.
@@ -59,10 +61,13 @@ void Robot::DisabledInit(){
 }
 
 void Robot::DisabledPeriodic() {
+	SmartDashboard::PutData("Obstacles", (SendableChooser*) chooserChooser->GetSelected());
 	Scheduler::GetInstance()->Run();
 }
 
 void Robot::AutonomousInit() {
+	autonomousCommand.reset((Command*)((SendableChooser*)
+			chooserChooser->GetSelected())->GetSelected());
 	if (autonomousCommand.get() != nullptr)
 		autonomousCommand->Start();
 
