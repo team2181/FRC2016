@@ -28,6 +28,12 @@
 #include "OI.h"
 
 class Robot : public IterativeRobot {
+	private:
+	std::shared_ptr<CANTalon> motorRB;
+	std::shared_ptr<CANTalon> motorRF;
+	std::shared_ptr<CANTalon> motorLB;
+	std::shared_ptr<CANTalon> motorLF;
+	std::shared_ptr<RobotDrive> robotdrive;
 public:
 	std::unique_ptr<Command> autonomousCommand;
 	static std::unique_ptr<OI> oi;
