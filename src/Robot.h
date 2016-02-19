@@ -46,5 +46,12 @@ public:
 	virtual void TeleopInit();
 	virtual void TeleopPeriodic();
 	virtual void TestPeriodic();
+
+private:
+	SendableChooser *chooserChooser;
+	SendableChooser *leftChooser;
+	SendableChooser *rightChooser;
+	SendableChooser *centerChooser;
+
 };
 #endif
