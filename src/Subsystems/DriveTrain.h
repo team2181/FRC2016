@@ -43,6 +43,7 @@ public:
 	void ResetGyro();
 	void CalibrateGyro();
 	void PrintGyroAngle();
+	void driveFromValues(double speed, double turnval);
 };
 
 #endif

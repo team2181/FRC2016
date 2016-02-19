@@ -66,3 +66,7 @@ void DriveTrain::CalibrateGyro()
 	gyro->Calibrate();
 }
 
+void DriveTrain::driveFromValues(double speed, double turnval)
+{
+	robotdrive->ArcadeDrive(speed, turnval);
+}
