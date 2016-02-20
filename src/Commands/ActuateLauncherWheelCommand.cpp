@@ -33,7 +33,7 @@ void ActuateLauncherWheelCommand::Initialize() {
 void ActuateLauncherWheelCommand::Execute() {
 	if ( m_moveForward )
 	{
-		Robot::launcher->setLauncherMotor(0.5);
+		Robot::launcher->setLauncherMotor(1);
 	}
 	else
 	{
