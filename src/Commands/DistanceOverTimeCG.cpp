@@ -10,8 +10,8 @@
 
 
 
-#include <Commands/AutoDriveCommand.h>
-#include <Commands/DistanceOverTimeCG.h>
+#include "AutoDriveCommand.h"
+#include "DistanceOverTimeCG.h"
 #include <Commands/WaitCommand.h>
 
 
