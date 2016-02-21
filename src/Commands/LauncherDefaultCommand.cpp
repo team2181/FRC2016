@@ -27,14 +27,13 @@ LauncherDefaultCommand::LauncherDefaultCommand(): Command() {
 void LauncherDefaultCommand::Initialize() {
 	Robot::launcher->setLauncherMotor(0);
 	Robot::launcher->setLoaderMotor(0);
-	Robot::launcher->readArmSensor();
 	Robot::launcher->setDart(0);
-	Robot::launcher->printUltrasonic();
 }
 
 // Called repeatedly when this Command is scheduled to run
 void LauncherDefaultCommand::Execute() {
-
+	Robot::launcher->printUltrasonic();
+	Robot::launcher->readArmSensor();
 }
 
 // Make this return true when this Command no longer needs to run execute()
