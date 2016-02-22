@@ -47,7 +47,7 @@ void DriveTrain::InitDefaultCommand() {
 
 void DriveTrain::drive(Joystick* joystick)
 {
-	robotdrive->ArcadeDrive(joystick->GetY(), -joystick->GetX()*0.8);
+	robotdrive->ArcadeDrive(joystick->GetY(), -joystick->GetX());
 }
 double DriveTrain::GetGyroAngle()
 {
