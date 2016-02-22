@@ -24,6 +24,7 @@
 #include "Commands/LaunchCommand.h"
 #include "Commands/LauncherDefaultCommand.h"
 #include "Commands/RampDefaultCommand.h"
+#include "Commands/TurnToGyroCommand.h"
 #include "Commands/VisionDefaultCommand.h"
 
 
@@ -53,6 +54,7 @@ OI::OI() {
     
 
     // SmartDashboard Buttons
+    SmartDashboard::PutData("TurnToGyroCommand: default", new TurnToGyroCommand(0, 0, 0));
     SmartDashboard::PutData("AutoLaunchCommand", new AutoLaunchCommand());
     SmartDashboard::PutData("VisionDefaultCommand", new VisionDefaultCommand());
     SmartDashboard::PutData("AutonomousPlaceholder", new AutonomousPlaceholder());
