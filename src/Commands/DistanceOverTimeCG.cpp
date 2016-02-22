@@ -36,10 +36,10 @@ DistanceOverTimeCG::DistanceOverTimeCG() {
     // a CommandGroup containing them would require both the chassis and the
     // arm.
 
-	AddSequential(new AutoDriveCommand(0.5, 0, 1));
-	//Drives forward 50%, no turn, for 1 second
+	AddSequential(new AutoDriveCommand(0.5, 1, 0));
+	//Drives forward 50%, for 1 second, no turn
 	AddSequential(new AutoDriveCommand(0, 0, 0));
-	//Drives forward 0% (stops), no turn, instantly times out (runs once)
+	//Drives forward 0% (stops), instantly times out, no turn
 	AddSequential(new WaitCommand(5));
 	//Waits for 5 seconds
  }
