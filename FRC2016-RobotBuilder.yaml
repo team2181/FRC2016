@@ -303,7 +303,7 @@ Children:
           default: whileHeld
           name: When to Run
           validators: null
-          value: whileHeld
+          value: whenPressed
       Base: Joystick Button
       Name: dartForward
     - Children: []
@@ -334,7 +334,7 @@ Children:
           default: whileHeld
           name: When to Run
           validators: null
-          value: whileHeld
+          value: whenPressed
       Base: Joystick Button
       Name: dartBackward
     - Children: []
@@ -347,7 +347,7 @@ Children:
           validators: null
           value:
           - !!robotbuilder.data.properties.ValuedParameterDescriptor {name: moveForward,
-            type: boolean, value: 'false'}
+            type: boolean, value: 'true'}
         Button: !!robotbuilder.data.properties.ChoicesProperty
           choices: *id006
           default: '1'
@@ -365,7 +365,7 @@ Children:
           default: whileHeld
           name: When to Run
           validators: null
-          value: whileHeld
+          value: whenPressed
       Base: Joystick Button
       Name: launcherWheelForward
     - Children: []
@@ -378,7 +378,7 @@ Children:
           validators: null
           value:
           - !!robotbuilder.data.properties.ValuedParameterDescriptor {name: moveForward,
-            type: boolean, value: 'true'}
+            type: boolean, value: 'false'}
         Button: !!robotbuilder.data.properties.ChoicesProperty
           choices: *id006
           default: '1'
@@ -396,7 +396,7 @@ Children:
           default: whileHeld
           name: When to Run
           validators: null
-          value: whileHeld
+          value: whenPressed
       Base: Joystick Button
       Name: launcherWheelBackward
     - Children: []
@@ -697,12 +697,30 @@ Children:
         name: Button on SmartDashboard, validators: null, value: true}
     Base: Command
     Name: VisionDefaultCommand
+  - Children: []
+    Properties:
+      Parameters: !!robotbuilder.data.properties.ParametersProperty
+        default: []
+        name: Parameters
+        validators: null
+        value: []
+      Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
+        name: Requires, type: Subsystem, validators: null, value: None}
+      Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
+        default: &id011 []
+        name: Parameter presets
+        validators: null
+        value: *id011
+      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
+        name: Button on SmartDashboard, validators: null, value: true}
+    Base: Command
+    Name: AutoLaunchCommand
   Properties: {}
   Base: Commands
   Name: Commands
 Properties:
-  Eclipse Workspace: !!robotbuilder.data.properties.FileProperty {default: 'C:\Users\Stevan\workspace',
-    extension: null, folder: true, name: Eclipse Workspace, validators: null, value: 'C:\Users\Stevan\workspace'}
+  Eclipse Workspace: !!robotbuilder.data.properties.FileProperty {default: /home/stevan/workspace,
+    extension: null, folder: true, name: Eclipse Workspace, validators: null, value: /home/stevan/workspace}
   Export Commands: !!robotbuilder.data.properties.BooleanProperty {default: true,
     name: Export Commands, validators: null, value: true}
   Autonomous command parameters: !!robotbuilder.data.properties.ParametersProperty
@@ -720,7 +738,7 @@ Properties:
     name: Export Subsystems, validators: null, value: true}
   Simulation World File: !!robotbuilder.data.properties.StringProperty {default: /usr/share/frcsim/worlds/GearsBotDemo.world,
     name: Simulation World File, validators: null, value: /usr/share/frcsim/worlds/GearsBotDemo.world}
-  Wiring file location: !!robotbuilder.data.properties.FileProperty {default: 'C:\Users\Stevan\',
+  Wiring file location: !!robotbuilder.data.properties.FileProperty {default: /home/stevan/,
     extension: null, folder: true, name: Wiring file location, validators: null, value: 'C:\Users\Stevan\'}
   Autonomous Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
     name: Autonomous Command, type: Command, validators: null, value: AutonomousPlaceholder}
