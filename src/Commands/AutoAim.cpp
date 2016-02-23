@@ -50,7 +50,7 @@ bool AutoAim::IsFinished() {
 	target = ((-0.0102 * pow((u * 42.0919), 2)) + (3.0804 * (u * 42.0919)) + 210.79);
 	pos = RobotMap::launcherdart->GetAnalogIn();
 	//Check to make sure the pos value is within acceptable standards
-    if (pos < target + 15 && pos > target - 15)
+    if (pos <= target + 15 && pos >= target - 15)
 	{
 		return true;
 	}
