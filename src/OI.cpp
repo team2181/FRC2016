@@ -54,8 +54,6 @@ OI::OI() {
     
 
     // SmartDashboard Buttons
-    SmartDashboard::PutData("TurnToGyroCommand: default", new TurnToGyroCommand(0, 0, 0));
-    SmartDashboard::PutData("AutoLaunchCommand", new AutoLaunchCommand());
     SmartDashboard::PutData("VisionDefaultCommand", new VisionDefaultCommand());
     SmartDashboard::PutData("AutonomousPlaceholder", new AutonomousPlaceholder());
     SmartDashboard::PutData("DistanceOverTimeCG", new DistanceOverTimeCG());
