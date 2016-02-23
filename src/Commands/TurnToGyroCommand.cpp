@@ -41,7 +41,8 @@ void TurnToGyroCommand::Execute() {
 
 // Make this return true when this Command no longer needs to run execute()
 bool TurnToGyroCommand::IsFinished() {
-    return abs(Robot::driveTrain->GetGyroAngle() - m_gyroValue) <= m_error;
+    return abs(Robot::driveTrain->GetGyroAngle() - m_gyroValue) <= m_error
+    		|| IsTimedOut();
 }
 
 // Called once after isFinished returns true
