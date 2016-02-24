@@ -39,16 +39,12 @@ void AutoAim::Execute() {
 	u = RobotMap::launcherUltrasonic->GetVoltage();
 	target = ((-0.0102 * pow((u * 42.0919), 2)) + (3.0804 * (u * 42.0919)) + 210.79);
 	pos = RobotMap::launcherdart->GetAnalogIn();
+	SmartDashboard::PutNumber("AutoAim Target value", target);
 	if (pos < target - 10)
 	{
 		while (pos < target - 10)
 		{
-			u = RobotMap::launcherUltrasonic->GetVoltage();
-			target = ((-0.0102 * pow((u * 42.0919), 2)) + (3.0804 * (u * 42.0919)) + 210.79);
 			pos = RobotMap::launcherdart->GetAnalogIn();
-
-			SmartDashboard::PutNumber("Dart Position: ", pos);
-			SmartDashboard::PutNumber("Target value: ", target);
 			Robot::launcher->setDart(-0.5);
 		}
 	}
@@ -56,12 +52,7 @@ void AutoAim::Execute() {
 	{
 		while (pos > target + 10)
 		{
-			u = RobotMap::launcherUltrasonic->GetVoltage();
-			target = ((-0.0102 * pow((u * 42.0919), 2)) + (3.0804 * (u * 42.0919)) + 210.79);
 			pos = RobotMap::launcherdart->GetAnalogIn();
-
-			SmartDashboard::PutNumber("Dart Position: ", pos);
-			SmartDashboard::PutNumber("Target value: ", target);
 			Robot::launcher->setDart(0.5);
 		}
 	}
@@ -69,13 +60,10 @@ void AutoAim::Execute() {
 
 // Make this return true when this Command no longer needs to run execute()
 bool AutoAim::IsFinished() {
-	if (pos <  + 10 && pos > target - 10)
 	//Refresh variables
-	u = RobotMap::launcherUltrasonic->GetVoltage();
-	target = ((-0.0102 * pow((u * 42.0919), 2)) + (3.0804 * (u * 42.0919)) + 210.79);
 	pos = RobotMap::launcherdart->GetAnalogIn();
 	//Check to make sure the pos value is within acceptable standards
-    if (pos <= target + 15 && pos >= target - 15)
+    if (pos <= target + 10 && pos >= target - 10)
 		return true;
 	else
 		return false;

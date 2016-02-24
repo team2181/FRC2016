@@ -51,12 +51,8 @@ void ActuateDartCommand::Execute() {
 bool ActuateDartCommand::IsFinished() {
 	if (m_moveForward)
 		return !Robot::oi->getButtonDartForward();
-	else if (!m_moveForward)
-		return !Robot::oi->getButtonDartBackward();
-	else if (pos <  + 15 && pos > target - 15)
-		return true;
 	else
-		return false;
+		return !Robot::oi->getButtonDartBackward();
 }
 
 // Called once after isFinished returns true
