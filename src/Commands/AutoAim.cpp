@@ -42,7 +42,9 @@ void AutoAim::Execute() {
 	u = RobotMap::launcherUltrasonic->GetVoltage();
 	target = ((-0.0102 * pow((ultra * 42.0919), 2)) + (3.0804 * (ultra * 42.0919)) + 210.79);
 	pos = RobotMap::launcherdart->GetAnalogIn();
+
 	SmartDashboard::PutNumber("AutoAim Target value", target);
+
 	if (target < 800 && target > 300)
 	{
 		if (pos < target - 10)

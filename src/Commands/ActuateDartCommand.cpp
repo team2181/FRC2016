@@ -18,8 +18,6 @@
 
 ActuateDartCommand::ActuateDartCommand(bool moveForward): Command() {
     m_moveForward = moveForward;
-    ultra = RobotMap::launcherUltrasonic->GetVoltage();
-    target = ((-0.0102 * pow((ultra * 42.0919), 2)) + (3.0804 * (ultra * 42.0919)) + 210.79);
     pos = RobotMap::launcherdart->GetAnalogIn();
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
@@ -37,20 +35,22 @@ void ActuateDartCommand::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void ActuateDartCommand::Execute() {
+	pos = RobotMap::launcherdart->GetAnalogIn(); //Retrieve new POT value
+
 	if (m_moveForward)
 	{
-		Robot::launcher->setDart(0.50);
+		if (pos < 900) //Make sure the robot does not kill itself while going up
+			Robot::launcher->setDart(0.50); //Move dart up
 	}
 	else
 	{
-		Robot::launcher->setDart(-0.50);
+		if (pos > 300) //Make sure the robot does not kill itself while going down
+			Robot::launcher->setDart(-0.50); //Move dart down
 	}
 }
 
 // Make this return true when this Command no longer needs to run execute()
 bool ActuateDartCommand::IsFinished() {
-	pos = RobotMap::launcherdart->GetAnalogIn();
-
 	if (m_moveForward)
 		return !Robot::oi->getButtonDartForward();
 	else
