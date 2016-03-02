@@ -91,8 +91,8 @@ void Robot::DisabledInit(){
 }
 
 void Robot::DisabledPeriodic() {
-	SmartDashboard::PutData("Field Location", (SendableChooser*) chooserChooser->GetSelected());
-	SmartDashboard::PutData("Defense on Field", (SendableChooser*) defenseChooser->GetSelected());
+	//SmartDashboard::PutData("Field Location", (SendableChooser*) chooserChooser->GetSelected());
+	//SmartDashboard::PutData("Defense on Field", (SendableChooser*) defenseChooser->GetSelected());
 	Scheduler::GetInstance()->Run();
 }
 
