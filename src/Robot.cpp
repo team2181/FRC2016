@@ -68,12 +68,12 @@ void Robot::RobotInit() {
 	chooserChooser->AddObject("No Movement", nomoveChooser);
 
 	defenseChooser->AddDefault("LowBar", new AutoLowBar());
-	defenseChooser->AddObject("Rock Wall", rockwallChooser);
+	defenseChooser->AddObject("Rock Wall", new AutoRockWall());
 	defenseChooser->AddObject("Rough Terrain", new AutoRoughTerrain());
 	defenseChooser->AddObject("Moat", new AutoMoat());
 	defenseChooser->AddObject("Porticulis", porticulisChooser);
 	defenseChooser->AddObject("Chivel De Frise", chivedefriseChooser);
-	defenseChooser->AddObject("Ramparts", rampartsChooser);
+	defenseChooser->AddObject("Ramparts", new AutoRamparts());
 	defenseChooser->AddObject("No Movement", nomoveChooser);
 
 
@@ -114,9 +114,9 @@ void Robot::AutonomousInit() {
 	*/
 
 	autoDefense = (Command *) defenseChooser->GetSelected();
-	autoPosition = (Command *) chooserChooser->GetSelected();
 	autoDefense->Start();
-
+	autoPosition = (Command *) chooserChooser->GetSelected();
+	autoPosition->Start();
 
 }
 
