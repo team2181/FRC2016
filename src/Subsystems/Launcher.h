@@ -42,8 +42,6 @@ public:
 	bool readArmSensor();
 	void setDart(double v);
 	void printUltrasonic();
-	void GetDown();
-	double pos;
 };
 
 #endif
