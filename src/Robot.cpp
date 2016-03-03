@@ -116,9 +116,9 @@ void Robot::AutonomousInit() {
 	*/
 
 	autoDefense = (Command *) defenseChooser->GetSelected();
-	autoDefense->Start();
-	autoPosition = (Command *) chooserChooser->GetSelected();
-	autoPosition->Start();
+	if(autoDefense != NULL)autoDefense->Start();
+	//autoPosition = (Command *) chooserChooser->GetSelected();
+	//autoPosition->Start();
 
 }
 
