@@ -15,6 +15,8 @@
 #include "TurnToGyroCommand.h"
 #include "ActuateDartCommand.h"
 #include "GetDown.h"
+#include "AutoAim.h"
+#include "AutoLaunchCommand.h"
 
 AutoShoot::AutoShoot() {
 	AddSequential(new AutoDriveCommand(.5, 2, 0));
