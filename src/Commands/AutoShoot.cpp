@@ -9,27 +9,21 @@
 // it from being updated in the future.
 
 
-#include "AutoOne.h"
+#include "AutoShoot.h"
 #include "AutoDriveCommand.h"
 #include "Commands/CommandGroup.h"
 #include "TurnToGyroCommand.h"
 #include "ActuateDartCommand.h"
 #include "GetDown.h"
 
-AutoOne::AutoOne(double time, double angle) {
-	mAngle = angle;
-	mTime = time;
-	AddSequential(new TurnToGyroCommand(mAngle, 2, 2));
-	//Spins robot around backwards based off gyro values
+AutoShoot::AutoShoot() {
+	AddSequential(new AutoDriveCommand(.5, 2, 0));
+	//Drives forward 50%, for 2 second, no turn
 	AddSequential(new AutoDriveCommand(0, 0, 0));
-	//Drives forward 50%, for 4 second, no turn
-	AddSequential(new AutoDriveCommand(1, mTime, 0));
 	//Drives forward 0% (stops), instantly times out, no turn
-	AddSequential(new AutoDriveCommand(0, 0, 0));
+	AddSequential(new AutoAim());
 	//stops robot
-	AddSequential(new TurnToGyroCommand(0, 2, 2));
-	//turns robots to 0 degrees
-	AddSequential(new AutoDriveCommand(0, 0, 0));
-	//stops the robot
+	AddSequential(new AutoLaunchCommand());
+	//shoots the ball
  }
 

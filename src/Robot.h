@@ -57,29 +57,14 @@ public:
 
 private:
 	SendableChooser *chooserChooser;
-	SendableChooser *leftChooser;
-	SendableChooser *rightChooser;
-	SendableChooser *centerChooser;
 	SendableChooser *defenseChooser;
-	SendableChooser *oneChooser;
-	SendableChooser *twoChooser;
-	SendableChooser *threeChooser;
-	SendableChooser *fourChooser;
-	SendableChooser *fiveChooser;
-	SendableChooser *lowbarChooser;
-	SendableChooser *drawbridgeChooser;
-	SendableChooser *roughterrainChooser;
-	SendableChooser *rockwallChooser;
-	SendableChooser *moatChooser;
-	SendableChooser *sallyportChooser;
-	SendableChooser *chivedefriseChooser;
-	SendableChooser *porticulisChooser;
-	SendableChooser *rampartsChooser;
+	SendableChooser *shooterChooser;
 	SendableChooser *nomoveChooser;
 
 	Command *DoTCommand;
 	Command* autoDefense;
 	Command* autoPosition;
+	Command* autoShoot;
 
 };
 #endif

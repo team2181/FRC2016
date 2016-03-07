@@ -25,7 +25,7 @@ AutoLaunchCommand::AutoLaunchCommand(): Command() {
 
 // Called just before this Command runs the first time
 void AutoLaunchCommand::Initialize() {
-	load = new LaunchCommand;
+	load = new LaunchCommand();
 	Robot::launcher->setLauncherMotor(1);
 	Wait(3);
 	load->Start();
