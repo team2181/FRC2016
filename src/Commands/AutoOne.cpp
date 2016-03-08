@@ -16,7 +16,7 @@
 #include "ActuateDartCommand.h"
 #include "GetDown.h"
 
-AutoOne::AutoOne(double time, double angle) {
+AutoOne::AutoOne(double angle, double time) {
 	mAngle = angle;
 	mTime = time;
 	AddSequential(new TurnToGyroCommand(mAngle, 2, 2));
