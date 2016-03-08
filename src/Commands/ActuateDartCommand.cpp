@@ -42,12 +42,12 @@ void ActuateDartCommand::Execute() {
 	if (m_moveForward)
 	{
 		if (pos < 900) //Make sure the robot does not kill itself while going up
-			Robot::launcher->setDart(0.50); //Move dart up
+			Robot::launcher->setDart(0.85); //Move dart up
 	}
 	else
 	{
-		if (pos > 300) //Make sure the robot does not kill itself while going down
-			Robot::launcher->setDart(-0.50); //Move dart down
+		if (pos > 50) //Make sure the robot does not kill itself while going down
+			Robot::launcher->setDart(-0.75); //Move dart down
 	}
 }
 
