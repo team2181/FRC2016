@@ -17,6 +17,7 @@
 #include "GetDown.h"
 #include "AutoAim.h"
 #include "AutoLaunchCommand.h"
+#include "LaunchCommand.h"
 
 AutoShoot::AutoShoot() {
 	AddSequential(new AutoDriveCommand(.5, 2, 0));
@@ -25,7 +26,11 @@ AutoShoot::AutoShoot() {
 	//Drives forward 0% (stops), instantly times out, no turn
 	AddSequential(new AutoAim());
 	//stops robot
-	AddSequential(new AutoLaunchCommand());
-	//shoots the ball
+	AddSequential(new AutoLaunchCommand(true));
+	//spins up the launcher
+	AddSequential(new LaunchCommand());
+	//launches the ball
+	AddSequential(new AutoLaunchCommand(false));
+	//stops the launcher
  }
 
