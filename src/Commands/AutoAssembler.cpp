@@ -12,8 +12,8 @@ AutoAssembler::AutoAssembler(Command* position,
 		Command* obstacle,
 		Command* shoot)
 {
-	AddSequential(position);
 	AddSequential(obstacle);
+	AddSequential(position);
 	AddSequential(shoot);
 }
 
