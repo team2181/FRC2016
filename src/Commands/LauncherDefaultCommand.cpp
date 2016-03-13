@@ -25,9 +25,6 @@ LauncherDefaultCommand::LauncherDefaultCommand(): Command() {
 
 // Called just before this Command runs the first time
 void LauncherDefaultCommand::Initialize() {
-	Robot::launcher->setLauncherMotor(0);
-	Robot::launcher->setLoaderMotor(0);
-	Robot::launcher->setDart(0);
 }
 
 // Called repeatedly when this Command is scheduled to run

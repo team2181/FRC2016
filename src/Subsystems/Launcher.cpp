@@ -59,13 +59,13 @@ void Launcher::setLoaderMotor(double s)
 bool Launcher::readArmSensor()
 {
 	SmartDashboard::PutBoolean("Arm Sensor Triggered:", loaderSensor->Get());
-	return loaderMotor->Get();
+	return loaderSensor->Get();
 }
 
 
 void Launcher::setDart(double v)
 {
-	SmartDashboard::PutNumber("Dart Position", dart->GetAnalogIn());
+	printUltrasonic();
 	if(v > 0)
 	{
 		dart->Set(v);
@@ -88,8 +88,11 @@ void Launcher::printUltrasonic()
 	double u = ultrasonic->GetVoltage();
 	double target = ((-0.0102 * pow((u * 42.0919), 2)) + (3.0804 * (u * 42.0919)) + 210.79);
 	double pos = dart->GetAnalogIn();
+	SmartDashboard::PutNumber("Dart Position", pos);
 	SmartDashboard::PutNumber("Ultrasonic Voltage", u);
 	SmartDashboard::PutNumber("Dart Position Target Value", target);
 	SmartDashboard::PutNumber("Correction to Target", target - pos);
-	SmartDashboard::PutBoolean("On Target", abs(target - pos) <= 15);
+	SmartDashboard::PutBoolean("On Target", abs(target - pos) <= 10);
 }
+
+
