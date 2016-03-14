@@ -5,8 +5,7 @@
  *      Author: Stevan
  */
 
-#include <Commands/AutoAssembler.h>
-#include "Commands/Command.h"
+#include "AutoAssembler.h"
 
 AutoAssembler::AutoAssembler(Command* position,
 		Command* obstacle,
