@@ -21,8 +21,8 @@ AutoOne::AutoOne(double angle, double time) {
 	mTime = time;
 	AddSequential(new TurnToGyroCommand(mAngle, 2, 2));
 	//Spins robot around backwards based off gyro values
-	AddSequential(new AutoDriveCommand(0, 0, 0));
-	//Drives forward 50%, for 4 second, no turn
+	AddSequential(new AutoDriveCommand(0.5, 4, 0));
+	//Drives forward 50%, for 4 seconds, no turn
 	AddSequential(new AutoDriveCommand(1, mTime, 0));
 	//Drives forward 0% (stops), instantly times out, no turn
 	AddSequential(new AutoDriveCommand(0, 0, 0));
