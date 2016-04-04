@@ -22,9 +22,9 @@ TEAM = 2181
 RMCOMMAND = rm -f
 DEPLOYTARGET = roboRIO-$(TEAM)-FRC.local
 
-SOURCES = $(wildcard src/*.cpp)
-HEADERS = $(wildcard src/*.hpp)
-OBJECTS = $(patsubst src/%.cpp,src/%.o,$(wildcard src/*.cpp))
+SOURCES = $(wildcard src/*.cpp) $(wildcard src/Commands/*.cpp) $(wildcard src/Subsystems/*.cpp)
+HEADERS = $(wildcard src/*.h) $(wildcard src/Subsystems/*.h) $(wildcard src/Commands/*.h)
+OBJECTS = $(patsubst src/%.cpp,src/%.o,$(wildcard src/*.cpp)) $(patsubst src/Commands/%.cpp,src/Commands/%.o,$(wildcard src/Commands/*.cpp)) $(patsubst src/Subsystems/%.cpp,src/Subsystems/%.o,$(wildcard src/Subsystems/*.cpp))
 
 
 
